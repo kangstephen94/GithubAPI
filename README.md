@@ -20,7 +20,7 @@ node index.js --repo anton/test-project --period 20d
 
 Please use the exact output format, notice that numbers are aligned _(this is what [famous](http://blog.npmjs.org/post/141577284765/kik-left-pad-and-npm) left-pad is for)_. Also it's up to you how to indicate progress of the fetching process, but there must be some indicator.
 
-Fortunately Github has a [great HTTP API](https://developer.github.com/v3/repos/comments/) to help with the task. There are 3 types of comments a person can make, comment on individual comment, comment in Issue/Pull Request or comment in Pull Request review. (You can read more in [their docs](https://developer.github.com/v3/guides/working-with-comments/), if you are curious, but it's not required for this task.)
+Fortunately Github has a [great HTTP API](https://developer.github.com/v3/repos/comments/) to help with the task. There are 3 types of comments a person can make, comment on individual commit, comment in Issue/Pull Request or comment in Pull Request review. (You can read more in [their docs](https://developer.github.com/v3/guides/working-with-comments/), if you are curious, but it's not required for this task.)
 
 Mentioned 3 types of comments can be accessed using the following API endpoints:
 
@@ -81,4 +81,4 @@ You can remove this entry code afterwards. Mentioned file is added to `.gitignor
 - see `example.js` for how it's done, have fun :tada:
 
 ## When you are done
-Run `npm run eslint:fix` and fix all issues. Commit and push those fixes. Email us a link to your fork. 
+Run `npm run eslint:fix` and fix all issues. Commit and push those fixes. Email us a link to your fork.
