@@ -69,9 +69,11 @@ module.exports = '<token>'
 ```
 - run `npm start`
 - make sure you see the following output
-```
+```bash
 Your github token is:
 <your token>
+<details of your github account>
 ```
 You can remove this entry code afterwards. Mentioned file is added to `.gitignore` already.
 - run `npm run dev`, this will start development server (nodemon) that monitors your changes and re-runs the script for faster development cycle
+- see `example.js` for how it's done
