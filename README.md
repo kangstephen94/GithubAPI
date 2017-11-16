@@ -37,6 +37,7 @@ Use "total", we don't care for commits to match a date range, we just want all o
 ## Bonus Task
 
 
+
 ## Requirements
 
 * It should be possible to provide different project URL to pull top commenters for. See `config.js`.
@@ -46,7 +47,7 @@ Use "total", we don't care for commits to match a date range, we just want all o
 * Use ESLint and Prettier (pre-installed) for standard code formatting.
   * You would do this by running `npm run eslint:fix`, it will fix all issues it can, reformat your code and output errors it couldn't fix
   * Make sure you do this before submitting your task to us.
-* Just like with about any API respect [Github's rate limits.](https://developer.github.com/v3/rate_limit/) Handle errors when limit is exceeded. Reflect remaining limits in progress indicator.
+* Just like with about any API respect [Github's rate limits.](https://developer.github.com/v3/rate_limit/) Handle errors when limit is exceeded. Reflect remaining limits in progress indicator. Make sure you don't hit [abuse limits](https://developer.github.com/v3/guides/best-practices-for-integrators/#dealing-with-abuse-rate-limits).
 * Feel free to use any packages, except ones that wrap Github API. You have to use their API natively for this challenge.
 * All packages must be installed in `package.json`, so you project will be runnable out of the box.
 
@@ -78,3 +79,6 @@ Your github token is:
 You can remove this entry code afterwards. Mentioned file is added to `.gitignore` already.
 - run `npm run dev`, this will start development server (nodemon) that monitors your changes and re-runs the script for faster development cycle
 - see `example.js` for how it's done, have fun :tada:
+
+## When you are done
+Run `npm run eslint:fix` and fix all issues. Commit and push those fixes. Email us a link to your fork. 
