@@ -4,7 +4,7 @@ Github has [neat statistics](https://github.com/facebook/react/graphs/contributo
 
 ## Main Task
 
-You would need to fetch all existing comments for a given repository for a given period _or till the API limit is exhausted_, group by user and output it sorted by number of comments:
+You would need to fetch all existing comments for a given repository for a given period _or till the API limit is exhausted_, group by user and output it sorted by number of comments. Here is how we will execute your program and how output should look like:
 
 ```bash
 node index.js --repo anton/test-project --period 20d
@@ -40,10 +40,11 @@ Use "total", we don't care for commits to match a date range, we just want all o
 
 ## Requirements
 
-* It should be possible to provide different project URL to pull top commenters for. See `config.js`.
+* You must support `--repo` and `--period` parameters as indicated above, if `--period` is not specified assume infinite and keep fetching till API Limits are exhausted.
 * Focus on making code readable.
 * Over-communicate.
 * Create small, focused commits.
+* Test your code with repositories of different sizes.
 * Use ESLint and Prettier (pre-installed) for standard code formatting.
   * You would do this by running `npm run eslint:fix`, it will fix all issues it can, reformat your code and output errors it couldn't fix
   * Make sure you do this before submitting your task to us.
