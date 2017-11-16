@@ -34,13 +34,9 @@ You probably noticed in a sample output that after each name there is number of 
 
 Use "total", we don't care for commits to match a date range, we just want all of them.
 
-## Bonus Task
-
-
-
 ## Requirements
 
-* You must support `--repo` and `--period` parameters as indicated above, if `--period` is not specified assume infinite and keep fetching till API Limits are exhausted.
+* You must support `--repo` and `--period` parameters as indicated above, if `--period` is not specified assume infinite and keep fetching till API Limits are exhausted. `--period` only needs to support days in a format `25d` where `25` is number of days.
 * Focus on making code readable.
 * Over-communicate.
 * Create small, focused commits.
