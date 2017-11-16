@@ -28,7 +28,7 @@ Mentioned 3 types of comments can be accessed using the following API endpoints:
 - [Get Issues Comments](https://developer.github.com/v3/issues/comments/#list-comments-in-a-repository)
 - [Get Pull Requests Comments](https://developer.github.com/v3/pulls/comments/#list-comments-in-a-repository)
 
-You probably noticed in a sample output that after each name there is number of commits, here is an API to help fetch that.
+You probably noticed in a sample output that after each name there is number of commits, here is an API to help fetch that:
 
 - [Get Statistics Per Collaborator](https://developer.github.com/v3/repos/statistics/#get-contributors-list-with-additions-deletions-and-commit-counts)
 
