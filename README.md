@@ -58,8 +58,7 @@ We provide a basic project setup, so you don't have to worry about setting up ou
 To get started:
 
 - install node 8.9
-- fork this repository
-  - if you want to keep your work private, so your current employer can't see it let us know and we will setup a private repo for you
+- fork this repository (it will be  a private fork, nobody will be able to see it)
 - `cd` into repository directory
 - run `npm install`
 - create `src/token/__do-not-commit-me__.js` file and add your token there like that:
