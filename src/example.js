@@ -42,19 +42,26 @@ for (let i = 0; i < process.argv.length; i++) {
 //   }, 100)
 // }
 
-console.log(chalk.green(`Fetching comments for past ${timePeriod} for "${repoArg}"...`))
+console.log(
+  chalk.green(`Fetching comments for past ${timePeriod} for "${repoArg}"...`),
+)
 
 async function printCurrentUserDetails() {
   try {
     // startProgress()
     let response = []
     let totalResponses = 0
+    let page = 0
 
     while (response.length === 30) {
-      const response = await http.get(`/repos/${userName}/${repoName}/comments`)
+      const response = await http.get(
+        `/repos/${userName}/${repoName}/comments/?page=${page}`,
+      )
+
       const dataLength = response.data.length
       totalResponses = totalResponses + dataLength
       console.dir(response.data, { colors: true, depth: 4 })
+      page++
     }
   } catch (err) {
     console.error(chalk.red(err))
