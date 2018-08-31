@@ -22,7 +22,10 @@ console.reset = function() {
 }
 console.reset()
 
-// Define progress bar
+// Harcoded total of 4 ticks.  Each tick represents api requests sent out.
+// 3 ticks when obtaining each of the comments. This occurs quickly because of concurrent requests
+// Last tick when obtaining commit amounts.
+
 var bar = new ProgressBar(':bar', { total: 4 })
 
 // Pluck out the node command line options using regex into variables.
