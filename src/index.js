@@ -34,7 +34,6 @@ let timePeriod
 let userName
 let repoArg
 
-
 for (let i = 0; i < process.argv.length; i++) {
   if (process.argv[i] === '--repo') {
     repoArg = process.argv[i + 1]
@@ -54,6 +53,7 @@ if (timePeriod && repoArg) {
   console.log(chalk.green(`Fetching comments for "${repoArg}"...`))
 } else {
   console.log(chalk.red('Please provide repository url'))
+  process.exit()
 }
 
 // Returns a boolean to check if the comment is within the specified date.
@@ -72,7 +72,7 @@ function withinTime(date) {
 }
 
 
-//Returns promise to get data from github API
+//Returns promise to get data from github API.  
 
 function requestData(url) {
   return new Promise(async function(resolve) {
@@ -148,6 +148,7 @@ async function printDetails() {
       await totalPulls,
     )
     
+
     const users = await getUsers(completeResults)
 
     const results = await countCommits(`/repos/${userName}/${repoName}/stats/contributors`)  
