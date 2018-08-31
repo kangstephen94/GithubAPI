@@ -22,6 +22,9 @@ console.reset = function() {
 }
 console.reset()
 
+// Define progress bar
+var bar = new ProgressBar(':bar', { total: 4 })
+
 // Pluck out the node command line options using regex into variables.
 let repoName
 let timePeriod
@@ -73,8 +76,8 @@ function requestData(url) {
     let totalData = []
     let results = []
     let page = 1
-
-
+    
+    
     while (page === 1 || results.length === 100) {
       const response = http.get(url + `?page=${page}`)
       const data = await response
@@ -88,7 +91,7 @@ function requestData(url) {
         return withinTime(data.created_at)
       })
     }
-
+    bar.tick()
     resolve(totalData)
   })
 }
@@ -112,6 +115,7 @@ function countCommits(url) {
     const result = {}
     const response = await http.get(url)
     const data = response.data
+    bar.tick()
 
     data.forEach(commit => {
       result[commit.author.login] = commit.total
