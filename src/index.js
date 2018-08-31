@@ -74,8 +74,7 @@ function withinTime(date) {
 
 //Returns promise to get data from github API.  
 
-function requestData(url) {
-  return new Promise(async function(resolve) {
+async function requestData(url) {
     let totalData = []
     let results = []
     let page = 1
@@ -95,20 +94,17 @@ function requestData(url) {
       })
     }
     bar.tick()
-    resolve(totalData)
-  })
+    return totalData
 }
 
 // Returns promise to count number of comments for each user
 
 function getUsers(data) {
-  return new Promise(function (resolve) {
-    const users = {}
-    data.forEach(comment => {
-      users[comment.user.login] = users[comment.user.login] + 1 || 1
-    })
-    resolve(users)
+  const users = {}
+  data.forEach(comment => {
+    users[comment.user.login] = users[comment.user.login] + 1 || 1
   })
+  return users
 }
 
 
@@ -149,7 +145,7 @@ async function printDetails() {
     )
     
 
-    const users = await getUsers(completeResults)
+    const users = getUsers(completeResults)
 
     const results = await countCommits(`/repos/${userName}/${repoName}/stats/contributors`)  
     
