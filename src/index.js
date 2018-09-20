@@ -93,6 +93,7 @@ async function requestData(url) {
         return withinTime(data.created_at)
       })
     }
+
     bar.tick()
     return totalData
 }
@@ -119,6 +120,7 @@ function countCommits(url) {
     data.forEach(commit => {
       result[commit.author.login] = commit.total
     })
+    
     resolve(result)
   })
 }
@@ -126,6 +128,7 @@ function countCommits(url) {
 // Achieved getting data in a concurrent manner, runs much faster than awaiting each promise sequentially.
 
 async function printDetails() {
+
   try {
     const totalPulls = requestData(
       `/repos/${userName}/${repoName}/pulls/comments?per_page=100`,
